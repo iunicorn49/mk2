@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <!-- header start -->
+  <header>
+
+
+  </header>
+  <div class="margin-clear"></div>
+  <!-- header end -->
+
+  <!-- section banner start -->
+  <section class="banner">
+    <div class="banner-btn banner-btn-left"></div>
+    <div class="banner-btn banner-btn-right"></div>
+    <ul class="banner-spot">
+      <script type="text/template" id="template-banner-spot">
+      {{ each list v i }}
+      {{ if i === 0}}
+      <li class="banner-spot-item banner-spot-item-active"></li>
+      {{ else }}
+      <li class="banner-spot-item"></li>
+      {{ /if }}
+      {{ /each }}
+      </script>
+    </ul>
+    <ul class="banner-img-box">
+      <script type="text/template" id="template-banner-img">
+        {{ each list v i}}
+          <li><a href="#"><img src="{{ list[i].src }}" class="banner-img"></a></li>
+        {{ /each }}
+        <li><a href="#"><img src="{{ list[0].src }}" class="banner-img"></a></li>
+      </script>
+    </ul>
+  </section>
+  <!-- section banner end-->
+
+  <!-- section card-box start -->
+  <section class="card-box">
+
+  <script type="text/template" id="template-card">
+  {{ each list v i }}
+  <div class="card" data-cardId="{{ list[i].id }}">
+    <h2 class="card-title primary-font">{{ list[i].title }}</h2>
+    <span class="card-sort card-sort-{{ list[i].tag }}"></span>
+    <div class="hr"></div>
+    <div class="card-content second-font">{{ list[i].content }}</div>
+    <div class="card-author">
+      <div class="card-author-avatar">
+        <img src="" alt="">
+      </div>
+      <h3 class="card-author-name primary-font">{{ list[i].user }}</h3>
+      <span class="card-author-time assist-font">{{ list[i].date }}</span>
+    </div>
+  </div>
+  {{ /each }}
+  </script>
+
+  </section>
+  <!-- section card-box end <--></-->
+
+  <!-- footer start -->
+  <footer>
+  </footer>
+  <!-- footer end -->
+
+<!-- 神奇的分割线 -->
+<script src="./assets/lib/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script src="./assets/lib/template-web.js" charset="utf-8"></script>
+<script src="./assets/js/fn.js" charset="utf-8"></script>
+<script src="./assets/js/main.js" charset="utf-8"></script>
+</body>
+</html>
